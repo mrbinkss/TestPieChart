@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestPieChart.MainPage"
+             xmlns:control="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:local="clr-namespace:TestPieChart.ViewModels">
+
+    <VerticalStackLayout>
+        <control:SfCircularChart>
+            <control:SfCircularChart.Title>
+                <Label Text="Product Sales" TextColor="Red" HorizontalTextAlignment="Center"/>
+            </control:SfCircularChart.Title>
+            <control:PieSeries ItemsSource="{Binding Products}" ShowDataLabels="True"
+                       XBindingPath="Name"
+                       YBindingPath="Sales">
+
+            </control:PieSeries>
+            <control:SfCircularChart.BindingContext>
+                <local:DataViewModel>
+
+                </local:DataViewModel>
+            </control:SfCircularChart.BindingContext>
+        </control:SfCircularChart>
+
+        <Button Text="Click me."/>
+    </VerticalStackLayout>
+    
+
+</ContentPage>
